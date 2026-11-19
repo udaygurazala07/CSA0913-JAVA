@@ -3,10 +3,10 @@
 **Course Code:** CSA09 – Java Fundamentals & Object-Oriented Programming  
 **Assignment Title:** Design, Implement and Validate an Object-Oriented Model for a Campus Smart-Parking System  
 **Total Marks:** 50  
-**Student Name:** Ravipati Gopala Krishna  
-**Register Number:** 192311237  
-**Department:** Computer Science and Engineering, Saveetha School of Engineering (SIMATS)  
-**Target Repository:** [Krishnar05/CSA0913--JAVA](https://github.com/Krishnar05/CSA0913--JAVA)  
+**Student Name:** Gurazala Uday Siva Sai  
+**Register Number:** 192425259
+**Department:** AI&ML, Saveetha School of Engineering (SIMATS)  
+**Target Repository:** [https://github.com/udaygurazala07/CSA0913-JAVA)  
 **Java Environment:** Java SE 17+ (Compatible with Java 8 through Java 21)
 
 ---
