@@ -1,168 +1,280 @@
-# Campus Smart-Parking System — Java Assignment 1
+# Campus Smart-Parking System – Java Assignment 1
 
-**Course Code:** CSA09 – Java Fundamentals & Object-Oriented Programming  
-**Assignment Title:** Design, Implement and Validate an Object-Oriented Model for a Campus Smart-Parking System  
-**Total Marks:** 50  
-**Student Name:** Gurazala Uday Siva Sai  
-**Register Number:** 192425259
-**Department:** AI&ML, Saveetha School of Engineering (SIMATS)  
-**Target Repository:** [https://github.com/udaygurazala07/CSA0913-JAVA)  
-**Java Environment:** Java SE 17+ (Compatible with Java 8 through Java 21)
+## Java Fundamentals & Object-Oriented Programming
+
+### Student Details
+
+| Details | Information |
+|---|---|
+| Student Name | Gurazala Uday Siva Sai |
+| Register Number | 192425259 |
+| Department | AI&ML |
+| Institution | Saveetha School of Engineering (SIMATS) |
+| Course Code | CSA09 |
+| Assignment | Assignment 1 |
+| Total Marks | 50 |
+| Java Environment | Java SE 17+ |
+| GitHub Repository | [CSA0913-JAVA](https://github.com/udaygurazala07/CSA0913-JAVA) |
 
 ---
 
 ## 1. Project Overview
-The **Campus Smart-Parking System** is an enterprise-grade object-oriented solution modeling a multi-level university parking facility serving students, faculty/staff, and visitors. The system automates vehicle entry, slot allocation across heterogeneous floors, ticket generation, duration and ceiling tariff calculation, EV charging metering, pass validation, and slot release.
 
-The project demonstrates all core Object-Oriented Programming (OOP) concepts in Java:
-- Data representation & array modeling (ragged/jagged arrays)
-- Algorithmic control logic and decision branching
-- Class design, constructor telescoping, and JVM memory lifecycle
-- Static members and garbage collection mechanics
-- Inheritance hierarchies (hierarchical and multilevel)
-- Method overriding, `@Override`, `final`, and Object contracts (`equals`, `hashCode`, `toString`)
-- Compile-time and runtime polymorphism with dynamic method dispatch
-- Abstraction via abstract classes and interfaces (`Chargeable`)
-- Encapsulation, defensive validation, and package architectures
-- Day-4 Design Challenge: Adapting to e-bikes, delivery van dynamic surge pricing, visitor day-passes, and facility expansion to 5 floors.
+The **Campus Smart-Parking System** is a Java-based project designed to manage parking facilities in a college campus.
+
+The system supports:
+- Vehicle entry and exit.
+- Parking slot allocation.
+- Parking ticket generation.
+- Parking fee calculation.
+- EV charging support.
+- Parking pass validation.
+- Slot release and management.
+- Multiple parking floors.
+
+### Concepts Used
+
+- Classes and Objects
+- Arrays and Jagged Arrays
+- Constructors
+- Static Members
+- Inheritance
+- Method Overriding
+- Polymorphism
+- Abstraction
+- Interfaces
+- Encapsulation
+- Packages
+- Garbage Collection
 
 ---
 
-## 2. Repository Structure
+## 2. Project Structure
 
-```
+```text
 CSA09-RegisterNumber-Assignment1/
-    |
-    └── ASSIGNMENT 1/
-          ├── Task01/
-          │     ├── Task01_ProblemAnalysis.md
-          │     ├── DomainModel.java
-          │     └── Task01_Output.txt
-          ├── Task02/
-          │     ├── Task02_DataRepresentation.md
-          │     ├── DataRepresentationDemo.java
-          │     └── Task02_Output.txt
-          ├── Task03/
-          │     ├── Task03_ControlLogic.md
-          │     ├── ParkingFacility.java      <-- Complete the Code
-          │     └── Task03_Output.txt
-          ├── Task04/
-          │     ├── Task04_ClassDesignAndConstructors.md
-          │     ├── ConstructorDemo.java
-          │     └── Task04_Output.txt
-          ├── Task05/
-          │     ├── Task05_StaticAndLifeCycle.md
-          │     ├── StaticLifeCycleDemo.java
-          │     └── Task05_Output.txt
-          ├── Task06/
-          │     ├── Task06_InheritanceHierarchy.md
-          │     ├── InheritanceDemo.java
-          │     └── Task06_Output.txt
-          ├── Task07/
-          │     ├── Task07_MethodOverriding.md
-          │     ├── OverridingDemo.java
-          │     └── Task07_Output.txt
-          ├── Task08/
-          │     ├── Task08_Polymorphism.md
-          │     ├── FeeDemo.java              <-- Complete the Code
-          │     └── Task08_Output.txt
-          ├── Task09/
-          │     ├── Task09_Abstraction.md
-          │     ├── AbstractionDemo.java
-          │     └── Task09_Output.txt
-          ├── Task10/
-          │     ├── Task10_EncapsulationAndPackages.md
-          │     ├── EncapsulationDemo.java
-          │     └── Task10_Output.txt
-          ├── Task11/
-          │     ├── Task11_TestingAndDefense.md
-          │     ├── SmartParkingSystem.java   <-- End-to-End Integrated Suite
-          │     └── Task11_Output.txt
-          ├── Task12/
-          │     ├── Task12_DesignChallenge.md
-          │     ├── AdaptedParkingSystem.java <-- Day-4 Adaptive Evolution
-          │     └── Task12_Output.txt
-          └── README.md
+│
+└── ASSIGNMENT 1/
+    ├── Task01/
+    │   ├── Task01_ProblemAnalysis.md
+    │   ├── DomainModel.java
+    │   └── Task01_Output.txt
+    │
+    ├── Task02/
+    │   ├── Task02_DataRepresentation.md
+    │   ├── DataRepresentationDemo.java
+    │   └── Task02_Output.txt
+    │
+    ├── Task03/
+    │   ├── Task03_ControlLogic.md
+    │   ├── ParkingFacility.java
+    │   └── Task03_Output.txt
+    │
+    ├── Task04/
+    │   ├── Task04_ClassDesignAndConstructors.md
+    │   ├── ConstructorDemo.java
+    │   └── Task04_Output.txt
+    │
+    ├── Task05/
+    │   ├── Task05_StaticAndLifeCycle.md
+    │   ├── StaticLifeCycleDemo.java
+    │   └── Task05_Output.txt
+    │
+    ├── Task06/
+    │   ├── Task06_InheritanceHierarchy.md
+    │   ├── InheritanceDemo.java
+    │   └── Task06_Output.txt
+    │
+    ├── Task07/
+    │   ├── Task07_MethodOverriding.md
+    │   ├── OverridingDemo.java
+    │   └── Task07_Output.txt
+    │
+    ├── Task08/
+    │   ├── Task08_Polymorphism.md
+    │   ├── FeeDemo.java
+    │   └── Task08_Output.txt
+    │
+    ├── Task09/
+    │   ├── Task09_Abstraction.md
+    │   ├── AbstractionDemo.java
+    │   └── Task09_Output.txt
+    │
+    ├── Task10/
+    │   ├── Task10_EncapsulationAndPackages.md
+    │   ├── EncapsulationDemo.java
+    │   └── Task10_Output.txt
+    │
+    ├── Task11/
+    │   ├── Task11_TestingAndDefense.md
+    │   ├── SmartParkingSystem.java
+    │   └── Task11_Output.txt
+    │
+    ├── Task12/
+    │   ├── Task12_DesignChallenge.md
+    │   ├── AdaptedParkingSystem.java
+    │   └── Task12_Output.txt
+    │
+    └── README.md
 ```
 
 ---
 
-## 3. Task Summaries and Execution Results
+## 3. Task Details
 
-| Task | Title & Concept | Key Files | Result Summary |
-| :--- | :--- | :--- | :--- |
-| **Task 01** | Problem Analysis & Objects (K4) | `Task01_ProblemAnalysis.md`, `DomainModel.java` | Identified candidate classes, nouns/verbs, business rules, and analyzed parallel arrays vs. OO. |
-| **Task 02** | Data Representation (K4) | `Task02_DataRepresentation.md`, `DataRepresentationDemo.java` | Jagged array `String[floor][slot]` justification and resolution of the integer division billing truncation bug. |
-| **Task 03** | Control Logic & Pseudocode (K4) | `Task03_ControlLogic.md`, `ParkingFacility.java` | **Completed Code:** Verified slot allocation, slot release, and full-capacity detection producing exact expected output. |
-| **Task 04** | Classes & Constructors (K4) | `Task04_ClassDesignAndConstructors.md`, `ConstructorDemo.java` | Parameterized, chained (`this(...)`), and copy constructors with JVM stack vs. heap tracing. |
-| **Task 05** | static Members & Object Life Cycle (K4) | `Task05_StaticAndLifeCycle.md`, `StaticLifeCycleDemo.java` | Global ticket counter, static methods/blocks, pass-by-value semantics, and GC eligibility on checkout. |
-| **Task 06** | Inheritance Hierarchy (K4) | `Task06_InheritanceHierarchy.md`, `InheritanceDemo.java` | Hierarchical & multilevel taxonomy (`Vehicle` $\rightarrow$ `Car` $\rightarrow$ `ElectricCar`) with traced constructor execution. |
-| **Task 07** | Method Overriding (K4) | `Task07_MethodOverriding.md`, `OverridingDemo.java` | Specialization of `ratePerHour()`, `@Override` enforcement, `final` immutability, and Object contract (`equals`/`hashCode`). |
-| **Task 08** | Polymorphism (K4) | `Task08_Polymorphism.md`, `FeeDemo.java` | **Completed Code:** Verified dynamic method dispatch across upcast `Vehicle[]` array and justified why `Car.equals(ElectricCar)` is true. |
-| **Task 09** | Abstraction (K4) | `Task09_Abstraction.md`, `AbstractionDemo.java` | Abstract class `Vehicle` vs. interface `Chargeable` with default telemetry method. |
-| **Task 10** | Encapsulation & Packages (K4) | `Task10_EncapsulationAndPackages.md`, `EncapsulationDemo.java` | Packaging (`model`, `service`, `app`), validating setters, and wrapper autoboxing `==` cache pitfalls. |
-| **Task 11** | Full Implementation & Defense (K5) | `Task11_TestingAndDefense.md`, `SmartParkingSystem.java` | Full end-to-end test suite: normal, boundary, invalid cases, and 100% reconciled hand-calculated Rs 320.0 audit. |
-| **Task 12** | Day-4 Design Challenge (K5) | `Task12_DesignChallenge.md`, `AdaptedParkingSystem.java` | Integrated E-Bikes (flat Rs 15), Delivery Vans (2x peak 9AM–5PM), Visitor One-Day Pass, and 5-floor jagged expansion. |
+| Task | Topic | Main Concept |
+|---|---|---|
+| 01 | Problem Analysis | Classes and Objects |
+| 02 | Data Representation | Arrays and Jagged Arrays |
+| 03 | Control Logic | Conditions and Loops |
+| 04 | Class Design | Classes and Constructors |
+| 05 | Static Members | Static Variables and Garbage Collection |
+| 06 | Inheritance | Hierarchical and Multilevel Inheritance |
+| 07 | Method Overriding | Overriding and Object Methods |
+| 08 | Polymorphism | Compile-time and Runtime Polymorphism |
+| 09 | Abstraction | Abstract Classes and Interfaces |
+| 10 | Encapsulation | Data Hiding and Packages |
+| 11 | Testing and Defense | Complete Parking System |
+| 12 | Design Challenge | Advanced Parking Features |
 
 ---
 
-## 4. Compilation and Execution Instructions
+## 4. Special Features
 
-### Prerequisites
-- JDK 8 or higher (JDK 17 or JDK 21 recommended).
-- Ensure `javac` and `java` are available in your system path.
+The project includes the following additional features:
 
-### Step-by-Step Execution Commands
+- E-Bike parking with a flat ₹15 charge.
+- Delivery Van parking with 2x peak-hour pricing.
+- Peak hours from 9 AM to 5 PM.
+- Visitor one-day parking pass.
+- Parking facility expansion to 5 floors.
+- EV charging support.
+
+---
+
+## 5. Compilation and Execution
+
+### Requirements
+
+- Java JDK 8 or higher.
+- Java compiler (`javac`).
+- Java Runtime Environment (`java`).
+
+### Run the Projects
+
+Open the terminal inside the `ASSIGNMENT 1` folder.
+
+**Task 01 – Problem Analysis**
 
 ```bash
-# Navigate to the ASSIGNMENT 1 directory
-cd "ASSIGNMENT 1"
-
-# Task 01: Domain Model
 javac Task01/DomainModel.java
 java -cp Task01 DomainModel
+```
 
-# Task 02: Data Representation & Precision
+**Task 02 – Data Representation**
+
+```bash
 javac Task02/DataRepresentationDemo.java
 java -cp Task02 DataRepresentationDemo
+```
 
-# Task 03: Control Logic (Complete the Code)
+**Task 03 – Control Logic**
+
+```bash
 javac Task03/ParkingFacility.java
 java -cp Task03 ParkingFacility
+```
 
-# Task 04: Class Design & Constructors
+**Task 04 – Constructors**
+
+```bash
 javac Task04/ConstructorDemo.java
 java -cp Task04 ConstructorDemo
+```
 
-# Task 05: Static Members & Lifecycle
+**Task 05 – Static Members**
+
+```bash
 javac Task05/StaticLifeCycleDemo.java
 java -cp Task05 StaticLifeCycleDemo
+```
 
-# Task 06: Inheritance Hierarchy
+**Task 06 – Inheritance**
+
+```bash
 javac Task06/InheritanceDemo.java
 java -cp Task06 InheritanceDemo
+```
 
-# Task 07: Method Overriding & Equals
+**Task 07 – Method Overriding**
+
+```bash
 javac Task07/OverridingDemo.java
 java -cp Task07 OverridingDemo
+```
 
-# Task 08: Polymorphism (Complete the Code)
+**Task 08 – Polymorphism**
+
+```bash
 javac Task08/FeeDemo.java
 java -cp Task08 FeeDemo
+```
 
-# Task 09: Abstraction & Interfaces
+**Task 09 – Abstraction**
+
+```bash
 javac Task09/AbstractionDemo.java
 java -cp Task09 AbstractionDemo
+```
 
-# Task 10: Encapsulation & Data Validation
+**Task 10 – Encapsulation**
+
+```bash
 javac Task10/EncapsulationDemo.java
 java -cp Task10 EncapsulationDemo
+```
 
-# Task 11: End-to-End System Implementation & Test Suite
+**Task 11 – Complete Parking System**
+
+```bash
 javac Task11/SmartParkingSystem.java
 java -cp Task11 SmartParkingSystem
+```
 
-# Task 12: Day-4 Design Challenge
+**Task 12 – Design Challenge**
+
+```bash
 javac Task12/AdaptedParkingSystem.java
 java -cp Task12 AdaptedParkingSystem
 ```
+
+---
+
+## 6. Learning Outcomes
+
+Through this assignment, I learned how to:
+
+- Design Java classes and objects.
+- Apply all major OOP concepts.
+- Use inheritance and polymorphism.
+- Implement abstraction and encapsulation.
+- Work with arrays and constructors.
+- Develop a complete parking management model.
+- Test and validate Java programs.
+
+---
+
+## 7. GitHub Repository
+
+**Repository Link:**  
+[https://github.com/udaygurazala07/CSA0913-JAVA](https://github.com/udaygurazala07/CSA0913-JAVA)
+
+---
+
+<p align="center">
+  <b>Java Assignment 1 – Campus Smart-Parking System</b><br>
+  Submitted by<br>
+  <b>Gurazala Uday Siva Sai</b><br>
+  Register Number: 192425259<br>
+  AI&ML – SIMATS
+</p>
