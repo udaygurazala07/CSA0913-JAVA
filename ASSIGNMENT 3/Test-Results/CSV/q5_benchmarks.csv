@@ -1,0 +1,4 @@
+Strategy,TotalRequests,SeatsCount,ExecutionTimeNs,ExecutionTimeMs,CorrectSeatsSold,LockType
+Synchronized_Method,10000,100,12408800,12.41,100,"Coarse-Grained (Screen Instance Monitor)"
+Fine_Grained_SyncBlock,10000,100,10509800,10.51,100,"Fine-Grained (Per-Seat Object Monitor)"
+Lock_Free_AtomicCAS,10000,100,12494900,12.49,100,"Hardware CPU CAS (compareAndSet)"

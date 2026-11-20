@@ -1,0 +1,33 @@
+============================================================
+  QUESTION 2: ONLINE EXAMINATION PORTAL EXECUTION
+============================================================
+Saved answer01.pdf
+Error: Could not store answer02.pdf
+Cause: Disk quota exceeded
+
+FULL THREE-TIER PROPAGATION EXECUTION:
+[Controller] Received submission request from Student: 192311094 | File: answer01.pdf
+[StorageLayer] Successfully committed answer01.pdf (250 KB) to disk.
+
+[Controller] Received submission request from Student: 192399999 | File: answer_guest.pdf
+[Controller - 403 Forbidden] Access Denied: Student ID 192399999 is not registered for this course.
+
+[Controller] Received submission request from Student: 192311094 | File: answer_late.pdf
+[Controller - 400 Bad Request] Submission Rejected: Deadline was 2026-11-17T10:00, submission received at 2026-11-17T10:15
+
+[Controller] Received submission request from Student: 192311094 | File: answer_oversize_chained.pdf
+[Controller - 500 Internal Error] Storage error writing script: answer_oversize_chained.pdf
+  -> Original Root Cause: java.io.IOException: POSIX write() failed: Disk quota exceeded on sector /mnt/exams
+
+[Controller] Received submission request from Student: 192311094 | File: answer_oversize_lost.pdf
+[Controller - 500 Internal Error] Storage error writing script: answer_oversize_lost.pdf
+  -> Original Root Cause: [LOST / NULL - Exception thrown without cause!]
+
+CHAINED STACK TRACE EVIDENCE:
+q2.ExamPortal$FileStorageException: Storage error writing script: corrupt_test.pdf
+	at q2.ExamPortal$StorageLayer.writeAnswerScript(ExamPortal.java:73)
+	at q2.ExamPortal.main(ExamPortal.java:219)
+Caused by: java.io.IOException: POSIX write() failed: Disk quota exceeded on sector /mnt/exams
+	at q2.ExamPortal$StorageLayer.writeAnswerScript(ExamPortal.java:67)
+	... 1 more
+============================================================

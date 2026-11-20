@@ -1,0 +1,31 @@
+============================================================
+  QUESTION 6: DEADLOCK & TOKEN COUNTER CAPTURE
+============================================================
+PART A - DEADLOCK REPRODUCTION:
+[TransferThread-A_to_B] Acquired lock on Account 101; attempting to lock Account 102...
+[TransferThread-B_to_A] Acquired lock on Account 102; attempting to lock Account 101...
+[MONITOR ALERT] State Analysis after 600 ms:
+  TransferThread-A_to_B State: BLOCKED (Waiting for Account 102)
+  TransferThread-B_to_A State: BLOCKED (Waiting for Account 101)
+[DEADLOCK CONFIRMED] Both threads are in BLOCKED state waiting on each other's locks!
+
+PART A - DEADLOCK-FREE LOCK ORDERING:
+[SafeTransfer-A_to_B] Acquired primary lock on Account 101
+[SafeTransfer-A_to_B] Acquired secondary lock on Account 102. Executing transfer Rs. 250.00
+[SafeTransfer-B_to_A] Acquired primary lock on Account 101
+[SafeTransfer-B_to_A] Acquired secondary lock on Account 102. Executing transfer Rs. 150.00
+[SUCCESS] Both transfers completed without deadlock!
+Account A (ID: 101) Final Balance: Rs. 900.00 (Expected: Rs. 900.00)
+Account B (ID: 102) Final Balance: Rs. 1100.00 (Expected: Rs. 1100.00)
+
+PART B - PRODUCER-CONSUMER (TODO 1 & 2):
+Sum of tokens collected: 210 (expected 210)
+
+PART B - 'while' VS 'if' EXPERIMENT:
+[BUG DETECTED] Buffer underflow! Take attempted when count = 0
+[BUG DETECTED] Buffer underflow! Take attempted when count = -1
+...
+[BUG DETECTED] Buffer underflow! Take attempted when count = -26
+Sum of tokens collected with 'if': 27
+Underflow / Corruption Detected: true
+============================================================

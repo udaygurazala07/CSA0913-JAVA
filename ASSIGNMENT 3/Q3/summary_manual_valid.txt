@@ -1,0 +1,13 @@
+================ DAILY SALES SUMMARY (MANUAL) ================
+Store File: store1.txt | Laptop | Qty: 5 | Total: Rs. 325000.00
+Store File: store1.txt | Mouse | Qty: 20 | Total: Rs. 9000.00
+Store File: store1.txt | Keyboard | Qty: 12 | Total: Rs. 14400.00
+Store File: store2.txt | Monitor | Qty: 8 | Total: Rs. 148000.00
+Store File: store2.txt | HDMI_Cable | Qty: 25 | Total: Rs. 8750.00
+Store File: store2.txt | Desk_Mat | Qty: 15 | Total: Rs. 9000.00
+Store File: store4.txt | External_SSD | Qty: 14 | Total: Rs. 100800.00
+Store File: store4.txt | USB_Flash | Qty: 40 | Total: Rs. 22000.00
+Store File: store4.txt | Speaker | Qty: 6 | Total: Rs. 27000.00
+--------------------------------------------------------------
+GRAND TOTAL REVENUE: Rs. 663950.00 | TOTAL ITEMS: 145
+==============================================================

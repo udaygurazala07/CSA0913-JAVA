@@ -1,0 +1,24 @@
+============================================================
+  QUESTION 7: SEMESTER RESULT PROCESSOR CAPTURE
+============================================================
+STAGE 3: HAND-CHECKED CONTROL SET VERIFICATION (20 FILES):
+Ground Truth: 14 Valid Files, 3 Corrupt Files, 3 Missing Files (Total: 20)
+Hand-Checked Summary: Processed: 20 | Success: 14 | Missing: 3 | Corrupt: 3 | Total Failures: 6
+Verification Status: [PASS - EXACT MATCH TO GROUND TRUTH]
+
+STAGE 3: FULL 10,000 ANSWER SCRIPTS SCALING BENCHMARK:
+1 Worker Thread : Time: 7,907 ms | Throughput: 1,264.7 files/s | Speedup: 1.00x
+  Summary: Successes: 9,500, Failures: 500 (Missing: 200, Corrupt: 300)
+
+2 Worker Threads: Time: 5,068 ms | Throughput: 1,973.2 files/s | Speedup: 1.56x
+  Summary: Successes: 9,500, Failures: 500 (Missing: 200, Corrupt: 300)
+
+4 Worker Threads: Time: 7,526 ms | Throughput: 1,328.7 files/s | Speedup: 1.05x
+  Summary: Successes: 9,500, Failures: 500 (Missing: 200, Corrupt: 300)
+
+8 Worker Threads: Time: 3,184 ms | Throughput: 3,140.7 files/s | Speedup: 2.48x
+  Summary: Successes: 9,500, Failures: 500 (Missing: 200, Corrupt: 300)
+
+Total Files Accounted For: 10,000 (100.0%)
+Unhandled Exceptions: 0 (Fault-tolerance rate: 100.0%)
+============================================================

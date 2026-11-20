@@ -1,0 +1,3 @@
+Approach,TotalFilesOpened,TotalFilesClosed,LeakedHandlesRemaining,ExecutionTimeNs,ExecutionTimeMs,SafeAgainstExceptions
+Manual_TryCatchFinally,4,4,0,112416200,112.416,No
+TryWithResources,5,5,0,20948600,20.949,Yes

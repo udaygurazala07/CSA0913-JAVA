@@ -1,0 +1,44 @@
+============================================================
+  QUESTION 3: DAILY SALES REPORT RESOURCE SAFETY CAPTURE
+============================================================
+MANUAL RUN (FAILING INPUT ON STORE 3):
+[START] SalesReportManual processing started.
+[OPEN] Acquired handle for: summary_manual_failing.txt (Active handles: 1)
+[PROCESSING] Opening and parsing: store1.txt
+[OPEN] Acquired handle for: store1.txt (Active handles: 2)
+[PROCESSING] Opening and parsing: store2.txt
+[OPEN] Acquired handle for: store2.txt (Active handles: 3)
+[PROCESSING] Opening and parsing: store3_corrupt.txt
+[OPEN] Acquired handle for: store3_corrupt.txt (Active handles: 4)
+[LOG ERROR] Parsing failure in file: store3_corrupt.txt -> For input string: "CORRUPT_NAN"
+[FINALLY] Commencing manual cleanup of file handles...
+[CLOSE] Released handle for: summary_manual_failing.txt (Active handles: 3)
+[CLOSE] Released handle for: store1.txt (Active handles: 2)
+[CLOSE] Released handle for: store2.txt (Active handles: 1)
+[CLOSE] Released handle for: store3_corrupt.txt (Active handles: 0)
+
+TRY-WITH-RESOURCES RUN:
+[START] SalesReportTryWithResources started.
+[TWR OPEN] Opened resource: summary_twr_output.txt (Active handles: 1)
+[TWR] Processing store file: store1.txt
+[TWR OPEN] Opened resource: store1.txt (Active handles: 2)
+[TWR CLOSE] Automatically closed resource: store1.txt (Active handles: 1)
+[TWR] Processing store file: store2.txt
+[TWR OPEN] Opened resource: store2.txt (Active handles: 2)
+[TWR CLOSE] Automatically closed resource: store2.txt (Active handles: 1)
+[TWR] Processing store file: store3_corrupt.txt
+[TWR OPEN] Opened resource: store3_corrupt.txt (Active handles: 2)
+[TWR CLOSE] Automatically closed resource: store3_corrupt.txt (Active handles: 1)
+[LOG TWR] Handled corrupt data in store file: store3_corrupt.txt (For input string: "CORRUPT_NAN")
+[VERIFY] Active open handles right inside catch: 1
+[TWR] Processing store file: store4.txt
+[TWR OPEN] Opened resource: store4.txt (Active handles: 2)
+[TWR CLOSE] Automatically closed resource: store4.txt (Active handles: 1)
+[SUCCESS] Summary report compiled safely.
+[TWR CLOSE] Automatically closed resource: summary_twr_output.txt (Active handles: 0)
+
+SUPPRESSED EXCEPTION EVIDENCE:
+[PRIMARY EXCEPTION CAUGHT]: Primary business logic failed in StoreDatabaseConnection
+Number of Suppressed Exceptions: 1
+  -> Suppressed [1]: Secondary I/O close() failed for StoreDatabaseConnection
+============================================================

@@ -1,0 +1,6 @@
+Scenario,StudentId,Condition,ExceptionThrown,ExceptionCategory,RootCausePreserved,ResponseStatus
+"1. Valid Submission","192311094","Within window, registered, 250KB","None","N/A","N/A","200 OK: Submission successful for answer01.pdf"
+"2. Unregistered Student","192399999","Student ID not in DB","StudentNotRegisteredException","Unchecked (RuntimeException)","No Cause Needed","403 Forbidden: Access Denied: Student ID 192399999 is not registered for this course."
+"3. Window Elapsed","192311094","Submission after 10:00 AM","ExamWindowClosedException","Checked (PortalException)","No Cause Needed","400 Window Closed: Submission Rejected: Deadline was 2026-11-17T10:00, submission received at 2026-11-17T10:15"
+"4. Storage Quota Exceeded (Chained)","192311094","File 850KB > 500KB","FileStorageException","Checked (PortalException)","Yes (IOException preserved)","500 Storage Failed: Storage error writing script: answer_oversize_chained.pdf"
+"5. Storage Quota Exceeded (Lost Cause)","192311094","File 850KB > 500KB","FileStorageException","Checked (PortalException)","No (cause=null, lost)","500 Storage Failed: Storage error writing script: answer_oversize_lost.pdf"

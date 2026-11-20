@@ -1,0 +1,6 @@
+TestCase,Description,InputFile,InputAmount,Outcome,CatchBlockExecuted,FinallyExecuted
+"Test 1: Valid Withdrawal","Normal valid cash withdrawal","valid_card.txt","5000","SUCCESS","NONE",true
+"Test 2: Non-numeric Input","Letters typed instead of numbers","valid_card.txt","five_thousand","FAILED_NUMBER_FORMAT","catch (NumberFormatException)",true
+"Test 3: Negative Amount","Negative withdrawal value entered","valid_card.txt","-1500","FAILED_ILLEGAL_AMOUNT","catch (IllegalArgumentException)",true
+"Test 4: Insufficient Funds","Amount exceeding available account balance","valid_card.txt","35000","FAILED_INSUFFICIENT_FUNDS","catch (FileNotFoundException ", InsufficientFundsException)
+"Test 5: Missing Card Reader","Card reader file or hardware config missing","missing_card_reader.txt","2000","FAILED_CARD_READ","catch (FileNotFoundException ", InsufficientFundsException)

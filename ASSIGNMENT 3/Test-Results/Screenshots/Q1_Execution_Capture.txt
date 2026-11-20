@@ -1,0 +1,41 @@
+============================================================
+  QUESTION 1: BANK ATM EXCEPTION HANDLING SIMULATION
+============================================================
+
+------------------------------------------------------------
+Processing Withdrawal Request: [Card File: valid_card.txt, Amount: '5000']
+[INFO] Card authenticated successfully. Card Number: CARD-SB-9876543210
+[SUCCESS] Dispensed: Rs. 5000.0 | Remaining Balance: Rs. 20000.0
+[FINALLY] Cleanup executed: Ejected card, logged session to audit, cleared PIN buffer.
+
+------------------------------------------------------------
+Processing Withdrawal Request: [Card File: valid_card.txt, Amount: 'five_thousand']
+[INFO] Card authenticated successfully. Card Number: CARD-SB-9876543210
+[CATCH] catch (NumberFormatException) -> Invalid amount format: 'five_thousand'. Numbers only.
+[FINALLY] Cleanup executed: Ejected card, logged session to audit, cleared PIN buffer.
+
+------------------------------------------------------------
+Processing Withdrawal Request: [Card File: valid_card.txt, Amount: '-1500']
+[INFO] Card authenticated successfully. Card Number: CARD-SB-9876543210
+[CATCH] catch (IllegalArgumentException) -> Withdrawal amount must be strictly positive. Entered: -1500.0
+[FINALLY] Cleanup executed: Ejected card, logged session to audit, cleared PIN buffer.
+
+------------------------------------------------------------
+Processing Withdrawal Request: [Card File: valid_card.txt, Amount: '35000']
+[INFO] Card authenticated successfully. Card Number: CARD-SB-9876543210
+[CATCH] catch (FileNotFoundException | InsufficientFundsException) -> Insufficient funds. Requested: Rs. 35000.0, Available: Rs. 20000.0
+[FINALLY] Cleanup executed: Ejected card, logged session to audit, cleared PIN buffer.
+
+------------------------------------------------------------
+Processing Withdrawal Request: [Card File: missing_card_reader.txt, Amount: '2000']
+[CATCH] catch (FileNotFoundException | InsufficientFundsException) -> Card-reader hardware interface file not found: missing_card_reader.txt
+[FINALLY] Cleanup executed: Ejected card, logged session to audit, cleared PIN buffer.
+
+============================================================
+UNCAUGHT STACK TRACE EVIDENCE (AtmStacktraceDemo):
+Exception in thread "main" java.lang.NullPointerException: Hardware card chip PIN buffer is null at slot 0
+	at q1.AtmStacktraceDemo.checkHardware(AtmStacktraceDemo.java:19)
+	at q1.AtmStacktraceDemo.validatePin(AtmStacktraceDemo.java:14)
+	at q1.AtmStacktraceDemo.processTransaction(AtmStacktraceDemo.java:10)
+	at q1.AtmStacktraceDemo.main(AtmStacktraceDemo.java:25)
+============================================================

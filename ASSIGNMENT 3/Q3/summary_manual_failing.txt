@@ -1,0 +1,8 @@
+================ DAILY SALES SUMMARY (MANUAL) ================
+Store File: store1.txt | Laptop | Qty: 5 | Total: Rs. 325000.00
+Store File: store1.txt | Mouse | Qty: 20 | Total: Rs. 9000.00
+Store File: store1.txt | Keyboard | Qty: 12 | Total: Rs. 14400.00
+Store File: store2.txt | Monitor | Qty: 8 | Total: Rs. 148000.00
+Store File: store2.txt | HDMI_Cable | Qty: 25 | Total: Rs. 8750.00
+Store File: store2.txt | Desk_Mat | Qty: 15 | Total: Rs. 9000.00
+Store File: store3_corrupt.txt | WebCam | Qty: 10 | Total: Rs. 28000.00

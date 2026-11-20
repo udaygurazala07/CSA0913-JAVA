@@ -1,0 +1,5 @@
+ThreadPoolSize,TotalFiles,SuccessCount,FailureCount,MissingFiles,CorruptFiles,ExecutionTimeMs,ThroughputFilesPerSec,SpeedupRatio
+1,10000,9500,500,200,300,7907,1264.70,1.00
+2,10000,9500,500,200,300,5068,1973.16,1.56
+4,10000,9500,500,200,300,7526,1328.73,1.05
+8,10000,9500,500,200,300,3184,3140.70,2.48
