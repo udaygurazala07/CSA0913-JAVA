@@ -1,13 +1,13 @@
 # Programming in Java — Assignment 2 (CO2)
 
 **Course Outcome:** CO2 – Strings and StringBuilder, regular expressions, the Collection Framework (List, Queue, Deque, PriorityQueue, Set, Map), the hashCode–equals contract, Generics, Comparable and Comparator, and the Collections utility class.  
-**Student Name:** Kattiripalli Dhanush  
-**Register Number:** 192311094  
+**Student Name:** G Uday Siva Sai 
+**Register Number:** 192425259
 **Total Marks:** 50 Marks  
 **Java Environment:** Java SE 27 (build 27.0.1.0.3+1-2, mixed mode, sharing)  
 **Operating System:** Microsoft Windows 11 (64-bit AMD64)  
-**GitHub Repository:** [https://github.com/Dhanushssmb/java.git](https://github.com/Dhanushssmb/java.git)  
-**Assignment Report PDF:** [Java_Assignment_2_Report_192311094.pdf](./Java_Assignment_2_Report_192311094.pdf)  
+**GitHub Repository:** https://github.com/udaygurazala07/CSA0913-JAVA
+
 
 ---
 
