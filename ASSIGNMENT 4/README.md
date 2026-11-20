@@ -1,221 +1,257 @@
-﻿# Programming in Java – Assignment 4 (CO4)
+# Programming in Java – Assignment 4 (CO4)
+
 ## Event-Driven GUI Design & JDBC Integration
 
-**Institution:** SIMATS Engineering, Saveetha Institute of Medical and Technical Sciences  
-**Department:** Computer Science and Engineering  
-**Course Code & Title:** CSA09 – Programming in Java  
-**Course Outcome:** CO4 – Applets, the event delegation model, listeners and adapter classes, inner and anonymous classes, AWT components and controls, layout managers, menus and dialogs, Swing components and GUI–JDBC integration (Sessions 49–56)  
-**Nature of Assignment:** Individual  
-**Total Marks:** 50 Marks  
-**Student Name:** Kattiripalli Dhanush  
-**Register Number:** 192311094  
-**GitHub Username:** Dhanushssmb  
-**GitHub Repository:** [https://github.com/Dhanushssmb/java.git](https://github.com/Dhanushssmb/java.git)  
-**Java Version:** `java version "27.0.1.0.3" 2026-10-25` (Oracle Corporation)  
-**MySQL Server:** `MySQL Server 8.0.40` on localhost:3306  
+### Student Details
+
+| Details | Information |
+|---|---|
+| Student Name | G Uday Siva Sai |
+| Register Number | 192425259 |
+| Department | Computer Science and Engineering |
+| Institution | SIMATS Engineering |
+| Course | CSA09 – Programming in Java |
+| Course Outcome | CO4 |
+| Java Version | Java 27 |
+| Database | MySQL 8.0.40 |
+| GitHub | https://github.com/udaygurazala07/CSA0913-JAVA |
 
 ---
 
-## Executive Summary & Mark Distribution
+## 1. About the Assignment
 
-| Task | Competency Assessed | Bloom's Level | Max Marks | Status | Evidence Location |
-|---|---|---|---|---|---|
-| **Task 1** | Diagnose and repair a poor event-handling design | K4 – Analyse | 6 | **Completed & Verified** | [`Task01-GUI-Design-Review/`](./Task01-GUI-Design-Review/) |
-| **Task 2** | Design an event-driven interface from a requirement | K4 – Analyse | 8 | **Completed & Verified** | [`Task02-Hospital-Appointment/`](./Task02-Hospital-Appointment/) |
-| **Task 3** | Design and implement layouts (Library Search) | K4 – Analyse | 9 | **Completed & Verified** | [`Task03-Library-Search/`](./Task03-Library-Search/) |
-| **Task 4** | Debug event handling using failing interactions | K4 – Analyse | 7 | **Completed & Verified** | [`Task04-Drawing-Pad/`](./Task04-Drawing-Pad/) |
-| **Task 5** | Compare event-handling styles under changing requirements | K5 – Evaluate | 7 | **Completed & Verified** | [`Task05-Currency-Converter/`](./Task05-Currency-Converter/) |
-| **Task 6** | Independently design and build a layered GUI–JDBC application | K5 – Evaluate | 13 | **Completed & Verified** | [`Task06-Campus-Event-Registration/`](./Task06-Campus-Event-Registration/) |
-| **TOTAL** | **Comprehensive Assignment 4 Suite** | **K4 & K5** | **50** | **100% COMPLETE** | **Report in `Report/Assignment4-Report.pdf`** |
+This assignment covers Java GUI development, event handling, Swing, AWT, and JDBC database connectivity.
+
+### Topics Covered
+- Event Delegation Model
+- Event Listeners
+- Inner and Anonymous Classes
+- AWT Components
+- Swing Components
+- Layout Managers
+- Menus and Dialogs
+- Lambda Expressions
+- JDBC and MySQL Integration
 
 ---
 
-## Repository Structure
+## 2. Tasks
 
-```
+| Task | Title | Marks |
+|---|---|---:|
+| Task 1 | GUI Design Review | 6 |
+| Task 2 | Hospital Appointment System | 8 |
+| Task 3 | Library Search Interface | 9 |
+| Task 4 | Drawing Pad | 7 |
+| Task 5 | Currency Converter | 7 |
+| Task 6 | Campus Event Registration System | 13 |
+| **Total** | | **50** |
+
+---
+
+## 3. Project Structure
+
+```text
 Java-Assignment-4/
 │
-├── README.md                               <-- Master Project Documentation & Execution Guide
+├── README.md
 ├── lib/
-│   └── mysql-connector-j-26.10.0.jar       <-- MySQL JDBC Driver (Bundled)
+│   └── mysql-connector-j-26.10.0.jar
 │
 ├── Task01-GUI-Design-Review/
 │   ├── Theory/
-│   │   └── Task1-Theory.md                 <-- Diagnoses (9 deficiencies), Table, Defense (<100w), O(k) vs O(1)
 │   └── src/
-│       ├── FeeService.java                 <-- Refactored Service Layer with PreparedStatement
-│       ├── FeeWindow.java                  <-- Decoupled Presentation Frame with Background Worker
-│       └── Task01Test.java                 <-- Automated Test Suite (Validation & DB tests)
 │
 ├── Task02-Hospital-Appointment/
 │   ├── Theory/
-│   │   └── Task2-Theory.md                 <-- Event Table, Component Hierarchy, SIMATS Pseudocode, Lifecycle Trace
 │   ├── Diagrams/
-│   │   └── Task02-Component-Hierarchy.png  <-- Component Containment Tree Diagram
 │   └── src/
-│       ├── Doctor.java                     <-- Specialist Model
-│       ├── AppointmentService.java         <-- In-Memory Doctor Cache & Conflict Detector
-│       ├── HospitalAppointmentFrame.java   <-- Working Hospital Outpatient Booking GUI
-│       └── Task02Test.java                 <-- Automated Test Suite
 │
 ├── Task03-Library-Search/
 │   ├── Theory/
-│   │   └── Task3-Theory.md                 <-- Layout Manager Justification, Resizing Analysis, Big-O comparison
 │   ├── Screenshots/
-│   │   ├── Task03-Size1-Compact-550x350.png
-│   │   ├── Task03-Size2-Medium-800x500.png
-│   │   └── Task03-Size3-Expanded-1050x700.png
 │   └── src/
-│       ├── LibrarySearchFrame.java         <-- Nested BorderLayout + FlowLayout Search & Table GUI
-│       └── Task03Capture.java              <-- Multi-Resolution Automated Capture Utility
 │
 ├── Task04-Drawing-Pad/
 │   ├── Theory/
-│   │   └── Task4-Theory.md                 <-- Forensics, Failing Interaction, @Override Analysis, Big-O Vector vs Raster
 │   ├── Screenshots/
-│   │   ├── Task04-Before-Clicks.png        <-- Initial window (0 clicks)
-│   │   ├── Task04-After-Clicks.png         <-- 6 points clicked & drawn
-│   │   └── Task04-After-Minimise-Restore.png <-- Window minimized & restored (Points survive!)
 │   └── src/
-│       ├── DrawPad.java                    <-- Completed TODO 1 & 2 DrawPad Implementation
-│       ├── TestMisspelledOverride.java     <-- Evidence of @Override compilation error
-│       └── Task04Capture.java              <-- Automated Click & Minimize-Restore Test Runner
 │
 ├── Task05-Currency-Converter/
 │   ├── Theory/
-│   │   └── Task5-Theory.md                 <-- Comparison of 4 Styles, Code Change Metrics, Shared Action Big-O
 │   ├── Screenshots/
-│   │   ├── Task05-Valid-Conversion.png     <-- 10000 INR -> 120.00 USD
-│   │   └── Task05-Invalid-Amount.png       <-- Invalid amount error handling
 │   ├── FrameActionListener/
-│   │   └── ConverterFrameActionListener.java <-- Style (a): Frame implements ActionListener
 │   ├── NamedInnerClass/
-│   │   └── ConverterNamedInnerClass.java    <-- Style (b): Named Inner Class
 │   ├── AnonymousInnerClass/
-│   │   └── ConverterAnonymousInnerClass.java <-- Style (c): Anonymous Inner Class
 │   └── LambdaExpression/
-│       └── Converter.java                  <-- Style (d): Completed TODO 1 & 2 Lambda Implementation
 │
 ├── Task06-Campus-Event-Registration/
-│   ├── README.md                           <-- Stages 1-4 Complete Specifications, Testable Statements, Big-O Analysis
+│   ├── README.md
 │   ├── database/
-│   │   ├── schema.sql                      <-- MySQL DDL with Composite UNIQUE constraint
-│   │   └── sample-data.sql                 <-- 6 Events & Sample Student Registrations
 │   ├── Screenshots/
-│   │   ├── Task06-01-Registration-Form.png
-│   │   ├── Task06-02-Committee-Table-View.png
-│   │   ├── Task06-03-Filtered-By-Event.png
-│   │   ├── Task06-04-Duplicate-Alert.png
-│   │   └── Task06-05-Validation-Alert.png
 │   └── src/
-│       ├── model/
-│       │   ├── Student.java
-│       │   ├── Event.java
-│       │   └── Registration.java
-│       ├── dao/
-│       │   ├── DatabaseConnection.java
-│       │   ├── EventDAO.java
-│       │   └── RegistrationDAO.java
-│       ├── service/
-│       │   ├── ValidationService.java
-│       │   └── RegistrationService.java
-│       └── presentation/
-│           ├── RegistrationPanel.java
-│           ├── RegistrationTablePanel.java
-│           ├── MenuController.java
-│           ├── MainFrame.java
-│           └── Task06Demonstration.java     <-- Automated Full-Suite Verification
 │
 ├── Diagrams/
-│   ├── Task02-Component-Hierarchy.png      <-- High-Resolution Hierarchy Tree
-│   └── Task06-Layered-Architecture.png     <-- 4-Layer UML Architecture Diagram
-│
 ├── Test-Results/
-│   ├── Test-Cases.md                       <-- 35 Exhaustive Test Case Specifications
-│   └── Execution-Results.md                <-- Raw Execution Logs & MySQL Verification
+│   ├── Test-Cases.md
+│   └── Execution-Results.md
 │
 └── Report/
-    └── Assignment4-Report.pdf              <-- Publication-Grade Comprehensive PDF Report
+    └── Assignment4-Report.pdf
 ```
 
 ---
 
-## Compilation & Execution Instructions
+## 4. Task Descriptions
 
-Ensure `mysql-connector-j-26.10.0.jar` in `lib/` is on the classpath.
+### Task 1 – GUI Design Review
+- Identify GUI design problems.
+- Improve event handling.
+- Separate GUI and service logic.
+- Implement database operations using PreparedStatement.
 
-### Task 1: Student Fee Payment
-```bash
-# Compile
+### Task 2 – Hospital Appointment System
+- Create a hospital appointment GUI.
+- Display doctor information.
+- Manage appointments.
+- Detect appointment conflicts.
+
+### Task 3 – Library Search Interface
+- Create a library search screen.
+- Use BorderLayout and FlowLayout.
+- Test different window sizes.
+- Capture screenshots.
+
+### Task 4 – Drawing Pad
+- Create a drawing application.
+- Handle mouse-click events.
+- Implement drawing functionality.
+- Test repainting and state persistence.
+
+### Task 5 – Currency Converter
+- Create a currency converter.
+- Implement four event-handling methods:
+  1. ActionListener
+  2. Named Inner Class
+  3. Anonymous Inner Class
+  4. Lambda Expression
+- Validate user input.
+
+### Task 6 – Campus Event Registration System
+- Develop a Java Swing application.
+- Connect the application with MySQL using JDBC.
+- Register students for events.
+- Display registration details.
+- Prevent duplicate registrations.
+- Implement event filtering and validation.
+
+---
+
+## 5. Compilation and Execution
+
+Run the commands from the project root directory using Windows PowerShell.
+
+### Task 1
+
+```powershell
 javac -cp "lib/mysql-connector-j-26.10.0.jar" -d Task01-GUI-Design-Review/bin Task01-GUI-Design-Review/src/*.java
 
-# Run Automated Test Suite
 java -cp "lib/mysql-connector-j-26.10.0.jar;Task01-GUI-Design-Review/bin" task01.Task01Test
-
-# Launch GUI
-java -cp "lib/mysql-connector-j-26.10.0.jar;Task01-GUI-Design-Review/bin" task01.FeeWindow
 ```
 
-### Task 2: Hospital Outpatient Appointment Desk
-```bash
-# Compile
+### Task 2
+
+```powershell
 javac -d Task02-Hospital-Appointment/bin Task02-Hospital-Appointment/src/*.java
 
-# Run Automated Test Suite
 java -ea -cp Task02-Hospital-Appointment/bin task02.Task02Test
-
-# Launch GUI
-java -cp Task02-Hospital-Appointment/bin task02.HospitalAppointmentFrame
 ```
 
-### Task 3: Campus Library Search Screen
-```bash
-# Compile
+### Task 3
+
+```powershell
 javac -d Task03-Library-Search/bin Task03-Library-Search/src/*.java
 
-# Run Multi-Resolution Screenshot Capture Utility
-java -cp Task03-Library-Search/bin task03.Task03Capture
-
-# Launch Interactive GUI
 java -cp Task03-Library-Search/bin task03.LibrarySearchFrame
 ```
 
-### Task 4: Drawing Pad Forensics
-```bash
-# Compile
+### Task 4
+
+```powershell
 javac -d Task04-Drawing-Pad/bin Task04-Drawing-Pad/src/DrawPad.java Task04-Drawing-Pad/src/Task04Capture.java
 
-# Run Automated Repaint & State Persistence Verification
 java -cp Task04-Drawing-Pad/bin task04.Task04Capture
-
-# Verify @Override Compiler Guard (produces compiler error)
-javac Task04-Drawing-Pad/src/TestMisspelledOverride.java
 ```
 
-### Task 5: Currency Converter (All 4 Styles)
-```bash
-# Compile All Styles
+### Task 5
+
+```powershell
 javac -d Task05-Currency-Converter/bin Task05-Currency-Converter/*/*.java
 
-# Run Automated Screenshot & Test Capture
-java -cp Task05-Currency-Converter/bin task05.Task05Capture
-
-# Launch Style (d) Official Completed Code
 java -cp Task05-Currency-Converter/bin task05.lambdaexpression.Converter
 ```
 
-### Task 6: Campus Event Registration Desktop Application
-```bash
-# 1. Setup Database in MySQL
-mysql -u root -p < Task06-Campus-Event-Registration/database/schema.sql
-mysql -u root -p < Task06-Campus-Event-Registration/database/sample-data.sql
+### Task 6 – Database Setup
 
-# 2. Compile All Layers
+```sql
+mysql -u root -p
+```
+
+Run the database files:
+
+```powershell
+mysql -u root -p < Task06-Campus-Event-Registration/database/schema.sql
+
+mysql -u root -p < Task06-Campus-Event-Registration/database/sample-data.sql
+```
+
+Compile and execute:
+
+```powershell
 javac -cp "lib/mysql-connector-j-26.10.0.jar" -d Task06-Campus-Event-Registration/bin Task06-Campus-Event-Registration/src/*/*.java
 
-# 3. Run Automated Demonstration Suite (Normal, Duplicate, Invalid, Filter, Export)
-java -cp "lib/mysql-connector-j-26.10.0.jar;Task06-Campus-Event-Registration/bin" task06.presentation.Task06Demonstration
-
-# 4. Launch Desktop Application
 java -cp "lib/mysql-connector-j-26.10.0.jar;Task06-Campus-Event-Registration/bin" task06.presentation.MainFrame
 ```
+
+---
+
+## 6. Technologies Used
+
+- Java 27
+- Java AWT
+- Java Swing
+- Event Handling
+- Lambda Expressions
+- JDBC
+- MySQL 8.0.40
+- Git and GitHub
+
+---
+
+## 7. Project Verification
+
+- [x] All 6 tasks completed.
+- [x] Java programs implemented.
+- [x] GUI applications developed.
+- [x] MySQL database connected.
+- [x] Test cases prepared.
+- [x] Screenshots captured.
+- [x] Theory documents completed.
+- [x] Assignment PDF report prepared.
+
+---
+
+
+## 9. GitHub Repository
+
+https://github.com/udaygurazala07/CSA0913-JAVA
+
+---
+
+<p align="center">
+  <b>Programming in Java – Assignment 4</b><br>
+  CO4 – Event-Driven GUI Design & JDBC Integration<br><br>
+  Submitted by: <b>G Uday Siva Sai</b><br>
+  Register Number: 192425259<br><br>
+  <i>SIMATS Engineering</i>
+</p>
