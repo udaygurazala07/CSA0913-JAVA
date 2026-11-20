@@ -1,0 +1,20 @@
+Input Scan Configurations for Q3 Event Attendance De-duplication:
+
+Test 1: Same Object Reference Scans
+- Gate 1: Student "192311001", "Arun" (Ref A)
+- Gate 2: Student "192311002", "Divya" (Ref B)
+- Gate 3: Student "192311001", "Arun" (Ref A re-scanned)
+
+Test 2: Distinct Object Scans (Exposes Default Object.hashCode() Flaw)
+- Gate 1: new Student("192311001", "Arun")
+- Gate 2: new Student("192311002", "Divya")
+- Gate 3: new Student("192311001", "Arun") (distinct memory instance)
+
+Test 3: Post-Insertion Key Mutation
+- Student("192311001", "Arun") added to HashSet
+- regNo mutated to "192311999" post-insertion
+- Demonstrates bucket mismatch, lookup failure, and zombie duplicate creation.
+
+Scale Test:
+- 1,000, 10,000, and 100,000 barcode scans with 50% duplicate rate
+- Evaluated on HashSet, TreeSet (with Comparator), and HashMap<String, Student>.

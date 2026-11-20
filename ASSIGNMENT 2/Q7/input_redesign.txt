@@ -1,0 +1,16 @@
+Input Workload Configurations for Q7 Day-4 Design Challenge:
+
+Workload 1: Starvation Stress Test
+- Initial arrival: 1 Severity-5 Patient (Asha) at timestamp 0.
+- Subsequent arrivals: 2,000 continuous Severity 1 and Severity 2 emergency arrivals.
+- Goal: Measure whether Asha ever gets treated, or suffers infinite starvation.
+
+Workload 2: Standard Scaled Hospital Volume (5,000 Patients)
+- Represents daily patient volume of a metropolitan hospital.
+- Evaluates admission latency, consultation service latency, and memory footprint.
+
+Workload 3: Regional Trauma Network Volume (20,000 Patients)
+- Evaluates multi-hour peak surge conditions across five clinical urgency tiers.
+
+Workload 4: Pandemic / Mass Casualty Disaster Rush (50,000 Patients)
+- Extreme stress test exposing the asymptotic difference between O(log N) binary heap and O(1) multi-level circular deques.

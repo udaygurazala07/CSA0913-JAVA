@@ -1,0 +1,19 @@
+Input Team Datasets for Q5 Inter-College Sports Leaderboard:
+
+Dataset 1: Supplied College Sports Demo
+- Panthers: Points = 9, GoalDiff = 4
+- Eagles: Points = 9, GoalDiff = 6
+- Cobras: Points = 6, GoalDiff = 1
+- Bisons: Points = 9, GoalDiff = 4
+Expected Ranking: [Eagles(9,6), Bisons(9,4), Panthers(9,4), Cobras(6,1)]
+
+Dataset 2: Multi-tier Tie-breaking Verification
+- Tigers (15, 8), Lions (15, 8), Hawks (15, 5), Bears (12, 10), Wolves (12, 10)
+- Tests level 1 ties (points), level 2 ties (goal difference), and level 3 ties (alphabetical name).
+
+Dataset 3: Comparator Breaking Cases
+- SafeTeam (100 pts) vs ExtremeLossTeam (Integer.MIN_VALUE pts) to demonstrate subtraction overflow.
+- Incomplete comparator ignoring goal difference tie-breaker.
+
+Dataset 4: Scaled Benchmarks
+- 1,000, 10,000, and 100,000 randomly generated teams comparing single-pass Comparator chain sort vs three-pass stable sort.

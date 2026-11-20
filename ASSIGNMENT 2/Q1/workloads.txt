@@ -1,0 +1,19 @@
+Workload Configurations for Railway e-Ticket Generation Benchmark:
+
+Workload 1 (Single Short Ticket):
+- Number of Tickets: 1
+- Fields per Ticket: 10
+- Repetitions: 50
+- Characteristics: Low load, minimal object allocation, typical single quick print.
+
+Workload 2 (Heavy Field Density):
+- Number of Tickets: 10,000
+- Fields per Ticket: 50
+- Repetitions: 5
+- Characteristics: High field count per ticket, exposes quadratic string copying and GC pressure.
+
+Workload 3 (High Concurrency / High Throughput Batch):
+- Number of Tickets: 50,000
+- Fields per Ticket: 25
+- Repetitions: 3
+- Characteristics: Massive throughput batch generation simulating festival booking rush.

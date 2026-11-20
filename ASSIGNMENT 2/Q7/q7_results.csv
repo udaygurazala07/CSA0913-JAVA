@@ -1,0 +1,7 @@
+SolutionName,WorkloadSize,AdmitTimeMs,ServeTimeMs,TotalTimeMs,StarvationOccurred
+"Original PriorityQueue",5000,5.5806,4.2689,9.8495,true
+"Redesigned Multi-Bucket",5000,3.2572,1.7001,4.9573,false
+"Original PriorityQueue",20000,17.4754,31.0150,48.4904,true
+"Redesigned Multi-Bucket",20000,11.7769,5.8507,17.6276,false
+"Original PriorityQueue",50000,20.9432,87.2549,108.1981,true
+"Redesigned Multi-Bucket",50000,17.8348,13.2987,31.1335,false

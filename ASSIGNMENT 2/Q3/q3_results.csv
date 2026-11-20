@@ -1,0 +1,10 @@
+DataStructure,TotalScans,UniqueStudents,ScanTimeMs,MemoryDeltaBytes
+"HashSet<Student>",1000,500,1.1201,0
+"TreeSet<Student>",1000,500,22.4374,151928
+"HashMap<String,Student>",1000,500,1.0920,45144
+"HashSet<Student>",10000,5000,3.1971,204000
+"TreeSet<Student>",10000,5000,14.7609,187664
+"HashMap<String,Student>",10000,5000,2.9564,187664
+"HashSet<Student>",100000,50000,43.7067,2885672
+"TreeSet<Student>",100000,50000,34.0882,2097152
+"HashMap<String,Student>",100000,50000,9.0516,2883600

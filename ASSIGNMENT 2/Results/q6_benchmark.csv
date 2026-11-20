@@ -1,0 +1,5 @@
+DataStructure,QueueSize,AdmitTimeMs,ServeAllTimeMs,TotalTimeMs,AsymptoticComplexity
+"PriorityQueue (Binary Heap)",100,1.3012,0.4698,1.7710,"O(log N)"
+"PriorityQueue (Binary Heap)",5000,6.3800,4.3517,10.7317,"O(log N)"
+"PriorityQueue (Binary Heap)",50000,33.2088,60.7884,93.9972,"O(log N)"
+"Array of 5 FIFO Queues",50000,17.2201,15.5985,32.8186,"O(1)"

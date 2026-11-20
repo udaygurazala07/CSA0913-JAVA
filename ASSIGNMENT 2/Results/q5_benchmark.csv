@@ -1,0 +1,4 @@
+TeamCount,SinglePassComparatorTimeMs,ThreePassStableSortTimeMs,SpeedupFactor
+1000,13.2291,38.4618,2.91
+10000,124.8419,76.4125,0.61
+100000,265.9411,356.9290,1.34

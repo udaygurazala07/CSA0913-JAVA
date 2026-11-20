@@ -1,0 +1,19 @@
+Input Patient Configurations for Q6 Hospital Emergency Triage:
+
+Supplied 6-Patient Verification:
+- Ravi (Severity 3, Arrival 0)
+- Meena (Severity 1, Arrival 1)
+- John (Severity 3, Arrival 2)
+- Asha (Severity 5, Arrival 3)
+- Kumar (Severity 1, Arrival 4)
+- Lata (Severity 2, Arrival 5)
+Expected Treatment Order: Meena(S1) Kumar(S1) Lata(S2) Ravi(S3) John(S3) Asha(S5)
+
+8-Patient Hand-Verified Instance:
+- Adds Vikram (S2, Arr 6) and Priya (S4, Arr 7) to evaluate multi-patient ties and heap-array internal representation vs polling order.
+
+Growth & Scalability Datasets:
+- 100 Patients (Local Clinic Queue)
+- 5,000 Patients (Daily Volume of City General Hospital)
+- 50,000 Patients (Disaster / Pandemic Surge Test)
+Evaluated across PriorityQueue, Array of 5 FIFO Queues, and Sorted LinkedList.

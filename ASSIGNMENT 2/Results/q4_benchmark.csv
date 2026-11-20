@@ -1,0 +1,10 @@
+InventorySize,MapType,PutTimeMs,Lookup100kTimeMs,AvgLookupNs,CodeOrderReportMs,NaturalCodeOrder,InsertionOrderReportMs,NaturalInsertionOrder
+1000,"HashMap",0.6076,17.0796,170.80,11.4057,false,0.0121,false
+1000,"TreeMap",2.1751,31.4662,314.66,7.2821,true,0.0109,false
+1000,"LinkedHashMap",1.2445,19.3693,193.69,2.4493,false,0.0974,true
+10000,"HashMap",7.1007,24.4914,244.91,12.8630,false,0.0556,false
+10000,"TreeMap",10.6657,87.5016,875.02,2.3939,true,0.0633,false
+10000,"LinkedHashMap",6.3401,40.8380,408.38,11.5586,false,1.2184,true
+100000,"HashMap",77.6703,33.3582,333.58,115.7912,false,0.4833,false
+100000,"TreeMap",126.9201,150.8019,1508.02,32.0548,true,0.3091,false
+100000,"LinkedHashMap",65.0959,41.4934,414.93,210.1692,false,4.3445,true
