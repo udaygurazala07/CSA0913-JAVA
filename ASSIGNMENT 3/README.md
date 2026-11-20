@@ -2,10 +2,9 @@
 
 **Course Title:** Java Programming  
 **Course Outcome:** CO3 – Exception handling (hierarchy, checked/unchecked, try-catch-finally, user-defined exceptions, chaining, try-with-resources, debugging) and Multithreading (thread life cycle, Thread and Runnable, thread methods, synchronization, deadlock, inter-thread communication, Executor framework, Callable and Future, and concurrent collections).  
-**Student Name:** Kattiripalli Dhanush  
-**Register Number:** 192311094  
-**GitHub Username:** Dhanushssmb  
-**Repository:** [https://github.com/Dhanushssmb/java.git](https://github.com/Dhanushssmb/java.git)  
+**Student Name: Gurazala Uday Siva Sai
+**Register Number: 192425259 Department: AI&ML, Saveetha School of Engineering (SIMATS)
+**Target Repository: [https://github.com/udaygurazala07/CSA0913-JAVA)
 **Execution Mode:** Individual Execution (Fulfilling both Student A – Design/Architecture and Student B – Testing/Experiments/Tracing tracks across all seven questions)  
 **Java Environment:** Java SE 27 (build 27.0.1.0.3+1-2, mixed mode, sharing)  
 **Operating System:** Microsoft Windows 11 (64-bit AMD64)  
