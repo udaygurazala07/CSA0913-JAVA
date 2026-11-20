@@ -1,95 +1,120 @@
 # Programming in Java — Assignment 2 (CO2)
 
-**Course Outcome:** CO2 – Strings and StringBuilder, regular expressions, the Collection Framework (List, Queue, Deque, PriorityQueue, Set, Map), the hashCode–equals contract, Generics, Comparable and Comparator, and the Collections utility class.  
-**Student Name:** G Uday Siva Sai 
-**Register Number:** 192425259
-**Total Marks:** 50 Marks  
-**Java Environment:** Java SE 27 (build 27.0.1.0.3+1-2, mixed mode, sharing)  
-**Operating System:** Microsoft Windows 11 (64-bit AMD64)  
-**GitHub Repository:** https://github.com/udaygurazala07/CSA0913-JAVA
+## Student Information
 
+| Field | Details |
+|---|---|
+| **Course Outcome** | CO2 – Strings, StringBuilder, Regular Expressions, Collections Framework, Generics, Comparable, Comparator and Collections Utility Class |
+| **Student Name** | G Uday Siva Sai |
+| **Register Number** | 192425259 |
+| **Total Marks** | 50 |
+| **Java Environment** | Java SE 27 (build 27.0.1.0.3+1-2, mixed mode, sharing) |
+| **Operating System** | Microsoft Windows 11 (64-bit AMD64) |
+| **GitHub Repository** | [CSA0913-JAVA](https://github.com/udaygurazala07/CSA0913-JAVA) |
 
 ---
 
-## Directory Structure
+## 1. Assignment Overview
 
-```
+This assignment focuses on the practical implementation and analysis of Java programming concepts under Course Outcome CO2.
+
+The major concepts covered include:
+
+- String, StringBuilder and StringBuffer
+- Regular Expressions
+- Java Collections Framework
+- List, Queue, Deque and PriorityQueue
+- Set and Map
+- hashCode() and equals() contract
+- Generics
+- Comparable and Comparator
+- Collections Utility Class
+- Performance benchmarking and analysis
+
+The assignment consists of seven practical tasks, theoretical answers, execution outputs, benchmark results and graphical comparisons.
+
+---
+
+## 2. Project Directory Structure
+
+```text
 Java-Assignment-2/
-├── README.md                                    # Master documentation & instructions
-├── .gitignore                                   # Ignore class files, logs, metadata
-├── Java_Assignment_2_Report_192311094.pdf      # Complete PDF report with embedded charts
 │
-├── Theory-Answers/                              # In-depth theory answers (Q1 to Q7)
-│   ├── Q1.md                                    # String vs StringBuilder vs StringBuffer
-│   ├── Q2.md                                    # ArrayList vs LinkedList vs ArrayDeque
-│   ├── Q3.md                                    # hashCode–equals contract & HashSet
-│   ├── Q4.md                                    # HashMap vs TreeMap vs LinkedHashMap
-│   ├── Q5.md                                    # Generic ranking component & Comparator
-│   ├── Q6.md                                    # PriorityQueue, triage & fairness
-│   └── Q7.md                                    # Day-4 Design Challenge: Diagnose & Redesign
+├── README.md
+├── .gitignore
+├── Java_Assignment_2_Report_192311094.pdf
 │
-├── Q1/                                          # Railway e-Ticket Generation
-│   ├── TicketBenchmark.java                     # Benchmark suite for 3 workloads
-│   ├── workloads.txt                            # Workload definitions
-│   ├── q1_results.csv                           # Measured timing & intermediate objects
-│   ├── q1_output.txt                            # Raw execution output
-│   ├── q1_string_comparison.png                 # Visualization chart
-│   └── README.md                                # Task summary & instructions
+├── Theory-Answers/
+│   ├── Q1.md
+│   ├── Q2.md
+│   ├── Q3.md
+│   ├── Q4.md
+│   ├── Q5.md
+│   ├── Q6.md
+│   └── Q7.md
 │
-├── Q2/                                          # Music Playlist Editor
-│   ├── Song.java                                # Track model
-│   ├── PlaylistBenchmark.java                   # 7 operations across 1k, 10k, 100k + Up Next
-│   ├── input_playlists.txt                      # Playlist scale descriptions
-│   ├── q2_results.csv                           # Measured operation times
-│   ├── q2_output.txt                            # Raw execution output
-│   ├── q2_list_comparison.png                   # Latency comparison chart
-│   └── README.md                                # Task summary & instructions
+├── Q1/  Railway e-Ticket Generation
+│   ├── TicketBenchmark.java
+│   ├── workloads.txt
+│   ├── q1_results.csv
+│   ├── q1_output.txt
+│   ├── q1_string_comparison.png
+│   └── README.md
 │
-├── Q3/                                          # Event Attendance De-duplication
-│   ├── AttendanceBeforeFix.java                 # Unfixed code (Output: Unique students: 3)
-│   ├── Attendance.java                          # Completed code (Output: Unique students: 2)
-│   ├── ContractInvestigationBenchmark.java      # 3 designed tests & scale benchmark
-│   ├── input_scans.txt                          # Scan stream definitions
-│   ├── q3_results.csv                           # De-duplication timings
-│   ├── q3_output.txt                            # Raw execution output
-│   ├── q3_contract_comparison.png               # De-duplication scaling chart
-│   └── README.md                                # Task summary & instructions
+├── Q2/  Music Playlist Editor
+│   ├── Song.java
+│   ├── PlaylistBenchmark.java
+│   ├── input_playlists.txt
+│   ├── q2_results.csv
+│   ├── q2_output.txt
+│   ├── q2_list_comparison.png
+│   └── README.md
 │
-├── Q4/                                          # Pharmacy Stock Lookup & Reports
-│   ├── Medicine.java                            # Pharmaceutical domain entity
-│   ├── PharmacyBenchmark.java                   # 100k lookups & dual report benchmark
-│   ├── input_inventory.txt                      # Inventory dataset definitions
-│   ├── q4_results.csv                           # Lookup and reporting timings
-│   ├── q4_output.txt                            # Raw execution output
-│   ├── q4_map_comparison.png                    # Map latency comparison chart
-│   └── README.md                                # Task summary & instructions
+├── Q3/  Event Attendance De-duplication
+│   ├── AttendanceBeforeFix.java
+│   ├── Attendance.java
+│   ├── ContractInvestigationBenchmark.java
+│   ├── input_scans.txt
+│   ├── q3_results.csv
+│   ├── q3_output.txt
+│   ├── q3_contract_comparison.png
+│   └── README.md
 │
-├── Q5/                                          # Generic Ranking Component
-│   ├── LeaderboardDemo.java                     # Completed code (Output: [Eagles, Bisons, Panthers, Cobras])
-│   ├── RankingInvestigationBenchmark.java       # Multi-tier tie check & faulty comparator test
-│   ├── input_teams.txt                          # Sports team datasets
-│   ├── q5_results.csv                           # Sorting pass timings
-│   ├── q5_output.txt                            # Raw execution output
-│   └── README.md                                # Task summary & instructions
+├── Q4/  Pharmacy Stock Lookup & Reports
+│   ├── Medicine.java
+│   ├── PharmacyBenchmark.java
+│   ├── input_inventory.txt
+│   ├── q4_results.csv
+│   ├── q4_output.txt
+│   ├── q4_map_comparison.png
+│   └── README.md
 │
-├── Q6/                                          # Hospital Emergency Triage
-│   ├── Triage.java                              # Completed code (Output: Meena Kumar Lata Ravi John Asha)
-│   ├── TriageInvestigationBenchmark.java        # 8-patient trace, heap inspection & growth
-│   ├── input_patients.txt                       # Patient admission records
-│   ├── q6_results.csv                           # Heap admission and poll timings
-│   ├── q6_output.txt                            # Raw execution output
-│   ├── q6_triage_scaling.png                    # Heap scaling chart
-│   └── README.md                                # Task summary & instructions
+├── Q5/  Generic Ranking Component
+│   ├── LeaderboardDemo.java
+│   ├── RankingInvestigationBenchmark.java
+│   ├── input_teams.txt
+│   ├── q5_results.csv
+│   ├── q5_output.txt
+│   └── README.md
 │
-├── Q7/                                          # Day-4 Design Challenge
-│   ├── FairTriageRedesign.java                  # Original vs Fair Multi-Bucket Redesign
-│   ├── input_redesign.txt                       # Workload configurations
-│   ├── q7_results.csv                           # Redesign validation metrics
-│   ├── q7_output.txt                            # Raw execution output
-│   ├── q7_redesign_comparison.png               # Throughput speedup chart
-│   └── README.md                                # Task summary & instructions
+├── Q6/  Hospital Emergency Triage
+│   ├── Triage.java
+│   ├── TriageInvestigationBenchmark.java
+│   ├── input_patients.txt
+│   ├── q6_results.csv
+│   ├── q6_output.txt
+│   ├── q6_triage_scaling.png
+│   └── README.md
 │
-└── Results/                                     # Consolidated benchmark data & plots
+├── Q7/  Day-4 Design Challenge
+│   ├── FairTriageRedesign.java
+│   ├── input_redesign.txt
+│   ├── q7_results.csv
+│   ├── q7_output.txt
+│   ├── q7_redesign_comparison.png
+│   └── README.md
+│
+└── Results/
     ├── q1_benchmark.csv
     ├── q2_benchmark.csv
     ├── q3_benchmark.csv
@@ -107,12 +132,82 @@ Java-Assignment-2/
 
 ---
 
-## Quick Compilation & Execution Guide
+## 3. Task Descriptions
 
-All programs can be compiled and executed from the command line using standard Java tools:
+### Q1 – Railway e-Ticket Generation
+
+**Concepts:** String, StringBuilder and StringBuffer.
+
+- Compared different string manipulation techniques.
+- Conducted benchmarks across three workloads.
+- Measured execution time and intermediate object creation.
+- Analyzed performance and memory efficiency.
+
+### Q2 – Music Playlist Editor
+
+**Concepts:** ArrayList, LinkedList and ArrayDeque.
+
+- Implemented music playlist management.
+- Compared seven operations across 1K, 10K and 100K records.
+- Evaluated random access and queue operations.
+- Analyzed Up Next functionality.
+
+### Q3 – Event Attendance De-duplication
+
+**Concepts:** hashCode(), equals() and HashSet.
+
+- Investigated the hashCode–equals contract.
+- Compared unfixed and corrected implementations.
+- Tested duplicate student records.
+- Analyzed the impact of mutable keys.
+
+### Q4 – Pharmacy Stock Lookup & Reports
+
+**Concepts:** HashMap, TreeMap and LinkedHashMap.
+
+- Implemented pharmacy inventory management.
+- Benchmarked 100K stock lookups.
+- Compared lookup and reporting performance.
+- Evaluated ordering and efficiency.
+
+### Q5 – Generic Ranking Component
+
+**Concepts:** Generics, Comparable and Comparator.
+
+- Implemented a generic ranking component.
+- Created sports team ranking functionality.
+- Tested multiple ranking criteria.
+- Investigated comparator overflow and sorting correctness.
+
+### Q6 – Hospital Emergency Triage
+
+**Concept:** PriorityQueue.
+
+- Implemented emergency patient prioritization.
+- Evaluated priority-based admission and processing.
+- Investigated heap ordering and starvation.
+- Conducted performance and heap growth benchmarks.
+
+### Q7 – Day-4 Design Challenge
+
+**Concepts:** Fair Multi-Bucket Queue and Aging.
+
+- Redesigned the original priority-based triage system.
+- Implemented five priority buckets using ArrayDeque.
+- Introduced aging to reduce patient starvation.
+- Compared throughput and validated the redesigned system.
+
+---
+
+## 4. Compilation and Execution Guide
+
+All programs can be compiled and executed using standard Java command-line tools.
+
+### Step 1: Compile All Tasks
+
+Run the following commands from the parent directory containing `Java-Assignment-2`.
 
 ```bash
-# 1. Compile all tasks
 javac -d bin Java-Assignment-2/Q1/*.java
 javac -d bin Java-Assignment-2/Q2/*.java
 javac -d bin Java-Assignment-2/Q3/*.java
@@ -120,43 +215,227 @@ javac -d bin Java-Assignment-2/Q4/*.java
 javac -d bin Java-Assignment-2/Q5/*.java
 javac -d bin Java-Assignment-2/Q6/*.java
 javac -d bin Java-Assignment-2/Q7/*.java
+```
 
-# 2. Run Task Q1 (Railway e-Ticket Benchmark)
+### Step 2: Execute Individual Tasks
+
+**Q1 – Railway e-Ticket Benchmark**
+
+```bash
 java -cp bin q1.TicketBenchmark
+```
 
-# 3. Run Task Q2 (Playlist Editor Benchmark)
+**Q2 – Music Playlist Editor**
+
+```bash
 java -cp bin q2.PlaylistBenchmark
+```
 
-# 4. Run Task Q3 (Attendance De-duplication)
-java -cp bin q3.AttendanceBeforeFix   # Outputs: Unique students: 3
-java -cp bin q3.Attendance            # Outputs: Unique students: 2
+**Q3 – Attendance De-duplication**
+
+```bash
+java -cp bin q3.AttendanceBeforeFix
+java -cp bin q3.Attendance
 java -cp bin q3.ContractInvestigationBenchmark
+```
 
-# 5. Run Task Q4 (Pharmacy Stock Lookup Benchmark)
+Expected outputs:
+
+```text
+Before Fix: Unique students: 3
+After Fix:  Unique students: 2
+```
+
+**Q4 – Pharmacy Stock Lookup Benchmark**
+
+```bash
 java -cp bin q4.PharmacyBenchmark
+```
 
-# 6. Run Task Q5 (Inter-College Sports Leaderboard)
-java -cp bin q5.LeaderboardDemo       # Outputs: [Eagles(9,6), Bisons(9,4), Panthers(9,4), Cobras(6,1)]
+**Q5 – Generic Ranking Component**
+
+```bash
+java -cp bin q5.LeaderboardDemo
 java -cp bin q5.RankingInvestigationBenchmark
+```
 
-# 7. Run Task Q6 (Emergency Department Triage)
-java -cp bin q6.Triage                # Outputs: Meena(S1) Kumar(S1) Lata(S2) Ravi(S3) John(S3) Asha(S5)
+Expected output:
+
+```text
+[Eagles(9,6), Bisons(9,4), Panthers(9,4), Cobras(6,1)]
+```
+
+**Q6 – Hospital Emergency Triage**
+
+```bash
+java -cp bin q6.Triage
 java -cp bin q6.TriageInvestigationBenchmark
+```
 
-# 8. Run Task Q7 (Day-4 Design Challenge Validation)
+Expected output:
+
+```text
+Meena(S1) Kumar(S1) Lata(S2) Ravi(S3) John(S3) Asha(S5)
+```
+
+**Q7 – Day-4 Design Challenge**
+
+```bash
 java -cp bin q7.FairTriageRedesign
 ```
 
 ---
 
-## Executive Summary of Results
+## 5. Executive Summary of Benchmark Results
 
-| Task | Topic | Key Evidence & Measured Result | Outcome / Verdict |
-| :--- | :--- | :--- | :--- |
-| **Q1** | String vs StringBuilder vs StringBuffer | Workload 2 (10k x 50 fields): String 316.02 ms (1,000,000 objects) vs StringBuilder 55.43 ms (10,000 objects). | **StringBuilder is 5.7x faster** with $O(n)$ amortized space. Recommended for per-ticket text. |
-| **Q2** | ArrayList vs LinkedList vs ArrayDeque | At 100k songs, `get(k)` took 2.79 ms in ArrayList vs 1,893.12 ms in LinkedList. "Up Next" queue: ArrayDeque took 27.51 ms vs 218.18 ms in ArrayList. | **ArrayList** is superior for playback random access; **ArrayDeque** is superior for double-ended queues. |
-| **Q3** | hashCode–equals Contract | Without `hashCode()`, set size was 3. Overriding `hashCode()` produced **Unique students: 2**. Key mutation creates zombie entries. | **Contract confirmed:** Equals and hashCode must evaluate identical fields; keys must be immutable. |
-| **Q4** | Pharmacy Inventory Map Selection | 100k lookups: HashMap (33.36 ms), LinkedHashMap (41.49 ms), TreeMap (150.80 ms). LinkedHashMap naturally yields intake order in 4.34 ms. | **LinkedHashMap** recommended: sub-microsecond lookups (414.9 ns) + zero-cost intake reporting. |
-| **Q5** | Generic Ranking Component | Verified expected output: **`[Eagles(9,6), Bisons(9,4), Panthers(9,4), Cobras(6,1)]`**. Subtraction comparison overflows into negative values. | **Comparator chaining** guarantees total ordering and transitivity without modifying domain entities. |
-| **Q6** | Priority, Order and Fairness in Queue | Verified expected output: **`Meena(S1) Kumar(S1) Lata(S2) Ravi(S3) John(S3) Asha(S5)`**. Heap array direct print is not sorted. S5 patients starve under heavy loads. | **PriorityQueue** handles 5k patients in 10.73 ms, but requires dynamic aging to prevent starvation. |
-| **Q7** | Day-4 Design Challenge | Replaced $O(\log N)$ heap with **Fair Multi-Bucket Queue** (`ArrayDeque[5]` + Aging). Starvation eliminated (Asha treated); throughput increased by **3.48x** at 50k patients. | **Design validated:** $O(1)$ constant-time multi-level bucket queue solves starvation and accelerates throughput. |
+### Q1 – String vs StringBuilder vs StringBuffer
+
+**Measured Results:**
+
+| Implementation | Execution Time | Intermediate Objects |
+|---|---:|---:|
+| String | 316.02 ms | 1,000,000 |
+| StringBuilder | 55.43 ms | 10,000 |
+
+**Outcome:**
+
+- StringBuilder achieved approximately 5.7x better performance.
+- Demonstrated O(n) amortized space behavior.
+
+**Verdict:** StringBuilder is recommended for repeated per-ticket text construction.
+
+### Q2 – ArrayList vs LinkedList vs ArrayDeque
+
+**Measured Results:**
+
+| Operation | Collection | Execution Time |
+|---|---|---:|
+| Random Access | ArrayList | 2.79 ms |
+| Random Access | LinkedList | 1,893.12 ms |
+| Up Next Queue | ArrayDeque | 27.51 ms |
+| Up Next Queue | ArrayList | 218.18 ms |
+
+**Outcome:**
+
+- ArrayList performs better for random access.
+- ArrayDeque performs better for queue operations.
+
+**Verdict:** ArrayList is recommended for playback random access, while ArrayDeque is recommended for double-ended queue operations.
+
+### Q3 – hashCode–equals Contract
+
+**Measured Results:**
+
+| Implementation | Unique Students |
+|---|---:|
+| Without hashCode() | 3 |
+| With corrected hashCode() | 2 |
+
+**Outcome:**
+
+- Demonstrated the importance of the hashCode–equals contract.
+- Identified the problem of mutable keys and zombie entries.
+
+**Verdict:** equals() and hashCode() must evaluate identical fields. Keys used in hash-based collections should remain immutable.
+
+### Q4 – Pharmacy Inventory Map Selection
+
+**Measured Results:**
+
+| Collection | 100K Lookup Time |
+|---|---:|
+| HashMap | 33.36 ms |
+| LinkedHashMap | 41.49 ms |
+| TreeMap | 150.80 ms |
+
+LinkedHashMap generated intake-order reports in 4.34 ms.
+
+**Outcome:**
+
+- HashMap provided the fastest measured lookup.
+- LinkedHashMap maintained insertion order.
+- TreeMap provided sorted key ordering.
+
+**Verdict:** LinkedHashMap is recommended for this use case because it combines efficient lookups with predictable intake-order reporting.
+
+### Q5 – Generic Ranking Component
+
+**Verified Output:**
+
+```text
+[Eagles(9,6), Bisons(9,4), Panthers(9,4), Cobras(6,1)]
+```
+
+**Outcome:**
+
+- Verified multi-level ranking.
+- Identified integer overflow caused by subtraction-based comparison.
+- Demonstrated Comparator chaining.
+
+**Verdict:** Comparator chaining provides consistent multi-level ordering without modifying domain entities.
+
+### Q6 – Priority, Order and Fairness in Queue
+
+**Verified Output:**
+
+```text
+Meena(S1) Kumar(S1) Lata(S2) Ravi(S3) John(S3) Asha(S5)
+```
+
+**Measured Result:**
+
+- PriorityQueue processed 5K patients in 10.73 ms.
+- Directly printing the heap array does not produce sorted output.
+- S5 patients can experience starvation under heavy loads.
+
+**Verdict:** PriorityQueue provides efficient priority processing, but dynamic aging is required to improve fairness.
+
+### Q7 – Day-4 Design Challenge
+
+**Measured Results:**
+
+- Replaced the O(log N) heap approach with a Fair Multi-Bucket Queue.
+- Implemented ArrayDeque[5] with Aging.
+- Eliminated starvation in the validation scenario.
+- Achieved 3.48x throughput improvement at 50K patients.
+
+**Verdict:** The Fair Multi-Bucket Queue provides O(1) queue operations under the designed bucket-based approach and improves fairness through aging.
+
+---
+
+## 6. Key Learning Outcomes
+
+Through this assignment, the following concepts were practically explored:
+
+1. Efficient string manipulation using StringBuilder.
+2. Selecting suitable data structures based on workload.
+3. Implementing correct equals() and hashCode() methods.
+4. Understanding Java Map implementations.
+5. Creating generic ranking systems using Comparator.
+6. Implementing priority-based queue processing.
+7. Designing fair queue systems using aging techniques.
+8. Measuring and analyzing program performance.
+
+---
+
+## 7. Final Conclusion
+
+This assignment demonstrates the practical application of Java Strings, Collections Framework, Generics, Comparable, Comparator and PriorityQueue.
+
+Through seven practical tasks, theoretical explanations, implementation, performance benchmarking and graphical analysis, the assignment highlights the importance of selecting appropriate data structures based on performance, memory usage, ordering requirements and fairness.
+
+The completed work combines theoretical understanding with practical Java programming and experimental validation.
+
+---
+
+## 8. Repository Information
+
+**GitHub Repository:** [CSA0913-JAVA](https://github.com/udaygurazala07/CSA0913-JAVA)
+
+**Student Name:** G Uday Siva Sai
+
+**Register Number:** 192425259
+
+**Course:** Programming in Java
+
+**Course Code:** CSA0913
